@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class ProfilScreen extends StatefulWidget {
   const ProfilScreen({super.key});
@@ -51,7 +50,7 @@ class _ProfilScreenState extends State<ProfilScreen> {
                           child: Text(
                             'Kirish',
                             textAlign: TextAlign.center,
-                            style: GoogleFonts.roboto(
+                            style: TextStyle(
                               color: Colors.black,
                               fontSize: 18,
                               fontWeight: FontWeight.w600,

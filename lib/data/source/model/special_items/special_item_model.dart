@@ -66,3 +66,5 @@ class Sticker with _$Sticker {
   factory Sticker.fromJson(Map<String, dynamic> json) =>
       _$StickerFromJson(json);
 }
+
+

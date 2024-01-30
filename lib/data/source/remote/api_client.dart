@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 
 import '../model/categories/all_categories_model.dart';
+import '../model/detail_model/product_detail_model.dart';
 import '../model/location/shops_location.dart';
 import '../model/product_popular_category/products_popular_category.dart';
 import '../model/sliders/slider_model.dart';
@@ -42,4 +43,7 @@ abstract class ApiClient {
 
   @GET('https://gateway.texnomart.uz/api/web/v1/region/stores-list')
   Future<StoresModel> getStoresModel();
+
+  @GET('https://gateway.texnomart.uz/api/web/v1/product/detail')
+  Future<ProductDetailModel> getProductDetailById(@Query('id') int id);
 }

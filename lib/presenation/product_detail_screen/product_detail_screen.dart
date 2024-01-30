@@ -4,10 +4,11 @@ import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '../../data/source/model/data/special_product_item_data.dart';
 import '../../utils/hive_helper.dart';
+import '../detail_feature/detail_feature_screen.dart';
 import '../home/home_bloc.dart';
+import 'characters_screen.dart';
 
 class ProductDetailScreen extends StatefulWidget {
   final String image;
@@ -82,6 +83,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                     ),
                   ),
                 ),
+
                 Padding(
                   padding: const EdgeInsets.only(top: 38.0),
                   child:
@@ -170,7 +172,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                       Row(
                         children: [
                           Text("Sharhlar: 9",
-                              style: GoogleFonts.poppins(
+                              style: TextStyle(
                                   fontWeight: FontWeight.w500,
                                   color: Colors.black,
                                   fontSize: 14)),
@@ -186,7 +188,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                       Row(
                         children: [
                           Text("Filiallar",
-                              style: GoogleFonts.poppins(
+                              style: TextStyle(
                                   fontWeight: FontWeight.w500,
                                   color: Colors.black,
                                   fontSize: 14)),
@@ -197,16 +199,27 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                       SizedBox(height: 10),
                       Divider(color: Colors.black12),
                       SizedBox(height: 10),
-                      Row(
-                        children: [
-                          Text("Xususiyatlari",
-                              style: GoogleFonts.poppins(
-                                  fontWeight: FontWeight.w500,
-                                  color: Colors.black,
-                                  fontSize: 14)),
-                          Spacer(),
-                          Icon(Icons.arrow_forward_ios, color: Colors.black38)
-                        ],
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => CharactersScreen(
+                                    characters: state.productDetailModel?.data.data.characters ??[],
+                                  )));
+print("************************************************************************${state.productDetailModel?.data.data.characters?[0]}");
+                        },
+                        child: Row(
+                          children: [
+                            Text("Xususiyatlari",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.black,
+                                    fontSize: 14)),
+                            Spacer(),
+                            Icon(Icons.arrow_forward_ios, color: Colors.black38)
+                          ],
+                        ),
                       ),
                       SizedBox(height: 10),
                       Divider(
@@ -237,7 +250,6 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                     child: InkWell(
                       onTap: () {
                         final snackBar = SnackBar(
-
                           /// need to set following properties for best effect of awesome_snackbar_content
                           elevation: 0,
 
@@ -249,7 +261,8 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                             // 'This is an example error message that will be shown in the body of snackbar!',
 
                             /// change contentType to ContentType.success, ContentType.warning or ContentType.help for variants
-                            contentType: ContentType.success, message: '',
+                            contentType: ContentType.success,
+                            message: '',
                           ),
                         );
                         ScaffoldMessenger.of(context)
@@ -279,7 +292,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                           child: Text(
                             'Savatchaga',
                             textAlign: TextAlign.center,
-                            style: GoogleFonts.roboto(
+                            style:TextStyle(
                               color: Colors.black,
                               fontSize: 18,
                               fontWeight: FontWeight.w400,

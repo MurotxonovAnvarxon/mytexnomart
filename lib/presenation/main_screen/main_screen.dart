@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import 'package:mytexnomart/presenation/catalog_screen/catalog_screen.dart';
 import 'package:mytexnomart/presenation/favourite_page/favourite_page.dart';
@@ -34,10 +33,6 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
-
-
-
-
     return Scaffold(
       body: PageStorage(bucket: bucket, child: currentScreen),
       bottomNavigationBar: BottomAppBar(
@@ -76,7 +71,7 @@ class _MainScreenState extends State<MainScreen> {
                     Text(
                       'Home',
                       textAlign: TextAlign.center,
-                      style: GoogleFonts.ubuntu(
+                      style: TextStyle(
                         color: currentTab == 0
                             ? const Color(0xFFF26B6C)
                             : const Color(0xFF7D7D7D),
@@ -111,7 +106,7 @@ class _MainScreenState extends State<MainScreen> {
                     Text(
                       'Katalog',
                       textAlign: TextAlign.center,
-                      style: GoogleFonts.ubuntu(
+                      style: TextStyle(
                         color: currentTab == 1
                             ? const Color(0xFFF26B6C)
                             : const Color(0xFF7D7D7D),
@@ -146,7 +141,7 @@ class _MainScreenState extends State<MainScreen> {
                     Text(
                       'Savatcha',
                       textAlign: TextAlign.center,
-                      style: GoogleFonts.ubuntu(
+                      style: TextStyle(
                         color: currentTab == 2
                             ? const Color(0xFFF26B6C)
                             : const Color(0xFF7D7D7D),
@@ -181,7 +176,7 @@ class _MainScreenState extends State<MainScreen> {
                     Text(
                       'Buyurtmalar',
                       textAlign: TextAlign.center,
-                      style: GoogleFonts.ubuntu(
+                      style: TextStyle(
                         color: currentTab == 3
                             ? const Color(0xFFF26B6C)
                             : const Color(0xFF7D7D7D),
@@ -216,7 +211,7 @@ class _MainScreenState extends State<MainScreen> {
                     Text(
                       'Profile',
                       textAlign: TextAlign.center,
-                      style: GoogleFonts.ubuntu(
+                      style: TextStyle(
                         color: currentTab == 4
                             ? const Color(0xFFF26B6C)
                             : const Color(0xFF7D7D7D),

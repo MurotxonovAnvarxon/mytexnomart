@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:mytexnomart/data/source/model/data/special_product_item_data.dart';
 
 import '../../utils/hive_helper.dart';
@@ -44,7 +43,7 @@ class _BasketItemState extends State<BasketItem> {
                 overflow: TextOverflow.ellipsis,
                 maxLines: 2,
                 textAlign: TextAlign.start,
-                style: GoogleFonts.poppins(
+                style: TextStyle(
                   fontWeight: FontWeight.w400,
                   fontSize: 15,
                 ),
@@ -57,7 +56,7 @@ class _BasketItemState extends State<BasketItem> {
             //   //   "${widget.product.value ?? ''} сум",
             //   //   overflow: TextOverflow.ellipsis,
             //   //   textAlign: TextAlign.start,
-            //   //   style: GoogleFonts.poppins(
+            //   //   style: TextStyle(
             //   //     fontWeight: FontWeight.w700,
             //   //     fontSize: 14,
             //   //   ),
@@ -80,7 +79,7 @@ class _BasketItemState extends State<BasketItem> {
                   widget.product.salePrice.toString() ?? '',
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.start,
-                  style: GoogleFonts.poppins(
+                  style: TextStyle(
                     fontWeight: FontWeight.w400,
                     fontSize: 12,
                   ),

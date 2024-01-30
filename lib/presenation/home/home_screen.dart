@@ -95,7 +95,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         const SizedBox(height: 25),
                         ImageSliderDemo(imgList: sliderImageList),
                         InkWell(
-                          onTap: (){
+                          onTap: () {
                             // Navigator.push(context, MaterialPageRoute(builder: (context)=>
                             //   CatalogScreen()
                             // ));

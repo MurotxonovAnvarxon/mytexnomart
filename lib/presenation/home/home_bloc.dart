@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
 import '../../data/source/model/categories/all_categories_model.dart';
+import '../../data/source/model/detail_model/product_detail_model.dart';
 import '../../data/source/model/sliders/slider_model.dart';
 import '../../data/source/model/special/special_categories_model.dart';
 import '../../data/source/model/special_items/special_item_model.dart';
@@ -25,7 +26,6 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         final specialItems = await apiClient.getTopItem();
         final getAllCategory = await apiClient.getAllCategories();
 
-
         emit(
           state.copyWith(
             status: Status.Success,
@@ -37,6 +37,13 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       } catch (e) {
         emit(state.copyWith(status: Status.Error));
       }
+    });
+    on<SpecialItemSelected>((event, emit) async {
+      final getCharacters =
+          await apiClient.getProductDetailById(event.id as int);
+      emit(
+        state.copyWith(status: Status.Success, productDetailModel: getCharacters),
+      );
     });
   }
 }
